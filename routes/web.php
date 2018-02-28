@@ -11,16 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('admin.master',['title'=>'ProjectManager']);
-});
-Route::get('user/{id}', function ($id) {
-    return 'User '.$id;
-});
-Route::view('/welcome', 'admin.master',['title'=>'ProjectManager']);
-Route::get('/home',function () {
-    return view('admin.master',['title'=>'ProjectManager']);
-});
-Route::get('posts/comments/{post?}/{comment?}', function ($postId=2,$commentId=2) {
-    return 'post'.$postId.'comments'.$commentId;
-});
+Route::get('/','HomeController@home');
+Route::get('/home','HomeController@home');
